@@ -1,0 +1,11 @@
+[ignore]
+.*/node_modules/.*
+.*/lib/.*
+
+[include]
+
+[libs]
+node_modules/async-dispatcher/type.js
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowIssue
