@@ -19,7 +19,7 @@ export default function useStoreState(storeName: string, dispatcher?: Dispatcher
     class UseStoreState extends React.Component<*, *, *> {
       state: State;
 
-      constructor(props: Props, context: any) {
+      constructor(props: any, context: any) {
         super(props, context);
 
         const currDispatcher = getDispatcher(props, context, dispatcher);

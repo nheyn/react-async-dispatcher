@@ -5,7 +5,7 @@ import useDispatch from './useDispatch';
 
 import type React from 'react';
 
-export type HigherOrderComponent = (Component: React.Component<*, *, *>) => React.Component<*, *, *>;
+export type HigherOrderComponent = Function;//(Component: React.Component<*, *, *>) => React.Component<*, *, *>;
 
 export {
   useDispatcher,

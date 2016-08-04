@@ -7,5 +7,5 @@ export default function getDispatcher(props: Object, context: Object, dispatcher
   if(props.dispatcher)    return props.dispatcher;
   if(context.dispatcher)  return context.dispatcher;
 
-  throw new Error('No dispatcher provided';)
+  throw new Error('No dispatcher provided');
 }

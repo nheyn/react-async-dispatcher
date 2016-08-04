@@ -4,9 +4,10 @@
   "description": "A todo list using async-dispatcher",
   "author": "Nick Heyn <nick@heyn.io>",
   "dependencies": {
-    "async-dispatcher": "../../async-dispatcher",
+    "async-dispatcher": "0.1.0-rc1",
     "http-server": "^0.9.0",
     "react": "^15.1.0",
+    "react-async-dispatcher": "../../react-async-dispatcher",
     "react-dom": "^15.1.0"
   },
   "devDependencies": {

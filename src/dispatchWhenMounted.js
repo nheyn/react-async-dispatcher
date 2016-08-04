@@ -21,7 +21,7 @@ export default function dispatchWhenMounted(
         const currDispatcher = getDispatcher(this.props, this.context, dispatcher);
 
         for(let i=0; actions.length>i; i++) {
-          currDispatcher.dispatch(action);
+          currDispatcher.dispatch(actions[i]);
         }
       }
 

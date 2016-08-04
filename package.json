@@ -13,7 +13,7 @@
     "react": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "async-dispatcher": "0.1.0-rc",
+    "async-dispatcher": "0.1.0-rc1",
     "babel-cli": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-es2015": "^6.9.0",
