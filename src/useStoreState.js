@@ -4,7 +4,7 @@ import React from 'react';
 import getDispatcher from './getDispatcher';
 
 import type { Dispatcher } from 'async-dispatcher';
-import type { HigherOrderComponent } from './index';
+import type { HigherOrderComponent } from 'react-async-dispatcher';
 
 type State = {
   data: any,
@@ -49,7 +49,7 @@ export default function useStoreState(storeName: string, dispatcher?: Dispatcher
         return <Component {...storeProp} {...this.props} />;
       }
     }
-    UseStoreState.childContextTypes = {
+    UseStoreState.contextTypes = {
       dispatcher: React.PropTypes.object,
     };
 

@@ -3,29 +3,21 @@
  */
 import React from 'react';
 
+import enhanceNewItem from '../containers/enhanceNewItem';
+
 type Props = {
   label: string,
   onUpdateNewItem: (label: string) => void,
-  onAddItem: () => void,
+  onAddItem: (label: string) => void,
 };
 
-export default class NewItem extends React.Component {
-  props: Props;
-
-  onAddClicked() {
-    const { label, onAddItem } = this.props;
-
-    onAddItem(label);
-  }
-
-  render(): React.Element {
-    const { label, onUpdateNewItem, onAddItem } = this.props;
-
-    return (
-      <div>
-        <input type="text" value={label} onChange={({ target }) => onUpdateNewItem(target.value)} />
-        <button onClick={() => onAddItem()}>Add</button>
-      </div>
-    );
-  }
+function NewItem({ label, onUpdateNewItem, onAddItem, ...otherProps }: Props): React.Element<*> {
+  return (
+    <div {...otherProps}>
+      <input type="text" value={label} onChange={({ target }) => onUpdateNewItem(target.value)} />
+      <button onClick={() => onAddItem(label)}>Add</button>
+    </div>
+  );
 }
+
+export default enhanceNewItem(NewItem);

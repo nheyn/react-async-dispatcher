@@ -4,22 +4,23 @@ import React from 'react';
 import getDispatcher from './getDispatcher';
 
 import type { Dispatcher } from 'async-dispatcher';
-import type { HigherOrderComponent } from './index';
+import type { HigherOrderComponent } from 'react-async-dispatcher';
 
 /**
  *
  */
-export default function useDispatch(dispatcher?: Dispatcher): HigherOrderComponent {
+export default function useDispatch(fnName: string = 'dispatch', dispatcher?: Dispatcher): HigherOrderComponent {
   return (Component) => {
     class UseDispatch extends React.Component<*, *, *> {
       render(): React.Element<*> {
         const currDispatcher = getDispatcher(this.props, this.context, dispatcher);
-        const dispatch = (action) => currDispatcher.dispatch(action);
+        let dispatchProps = {};
+        dispatchProps[fnName] = (action) => currDispatcher.dispatch(action);
 
-        return <Component dispatch={dispatch} {...this.props} />;
+        return <Component {...dispatchProps} {...this.props} />;
       }
     }
-    UseDispatch.childContextTypes = {
+    UseDispatch.contextTypes = {
       dispatcher: React.PropTypes.object,
     };
 

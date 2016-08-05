@@ -5,14 +5,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import TodoList from './components';
-import { createTodoDispatcher } from './dispatcher';
 
 /**
  * Render the TodoList to the page
  */
 function renderTodoListApp() {
   ReactDOM.render(
-    <TodoList dispatcher={createTodoDispatcher()} />,
+    <TodoList />,
     window.document.getElementById('todo-list')
   );
 }

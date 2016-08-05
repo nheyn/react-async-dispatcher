@@ -5,6 +5,7 @@
 [include]
 
 [libs]
+type.js
 node_modules/async-dispatcher/type.js
 
 [options]

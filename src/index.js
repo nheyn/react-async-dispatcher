@@ -2,19 +2,21 @@
 import useDispatcher from './useDispatcher';
 import useStoreState from './useStoreState';
 import useDispatch from './useDispatch';
-
-import type React from 'react';
-
-export type HigherOrderComponent = Function;//(Component: React.Component<*, *, *>) => React.Component<*, *, *>;
+import dispatchWhenMounted from './dispatchWhenMounted';
+import useActionCreator from './useActionCreator';
 
 export {
   useDispatcher,
   useStoreState,
   useDispatch,
+  dispatchWhenMounted,
+  useActionCreator,
 };
 
 export default {
   useDispatcher,
   useStoreState,
   useDispatch,
+  dispatchWhenMounted,
+  useActionCreator,
 };

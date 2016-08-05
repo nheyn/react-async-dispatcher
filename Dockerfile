@@ -12,6 +12,7 @@ RUN chown node:node ./
 
 # Get react-async-dispatcher files
 COPY ./.flowconfig ./.flowconfig
+COPY ./type.js ./type.js
 COPY ./.babelrc ./.babelrc
 COPY ./package.json ./package.json
 COPY ./src ./src

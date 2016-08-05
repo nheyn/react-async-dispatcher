@@ -2,7 +2,7 @@
 import React from 'react';
 
 import type { Dispatcher } from 'async-dispatcher';
-import type { HigherOrderComponent } from './index';
+import type { HigherOrderComponent } from 'react-async-dispatcher';
 
 /**
  *

@@ -4,7 +4,7 @@ import React from 'react';
 import getDispatcher from './getDispatcher';
 
 import type { Action, Dispatcher } from 'async-dispatcher';
-import type { HigherOrderComponent } from './index';
+import type { HigherOrderComponent } from 'react-async-dispatcher';
 
 /**
  *
@@ -29,7 +29,7 @@ export default function dispatchWhenMounted(
         return <Component {...this.props} />;
       }
     }
-    DispatchWhenMounted.childContextTypes = {
+    DispatchWhenMounted.contextTypes = {
       dispatcher: React.PropTypes.object,
     };
 
