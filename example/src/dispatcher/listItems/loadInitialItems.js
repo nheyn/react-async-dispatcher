@@ -7,12 +7,12 @@ type State = Array<ListItemState>;
 
 export const LIST_ITEM_LOAD = 'LIST_ITEM_LOAD';
 
-export default function loadInitialItems(state: State, action: Action): State | Promise<State> {
+export default function loadInitialItems(state: State, action: Action, { pause }: Object): State | Promise<State> {
   if(action.type !== LIST_ITEM_LOAD)  return state;
 
   const itemsPromise = getItems();
 
-  return itemsPromise;
+  return pause(itemsPromise);
 }
 
 function getItems(): Promise<State> {
