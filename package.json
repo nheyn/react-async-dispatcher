@@ -4,6 +4,9 @@
   "description": "React bindings for async-dispatcher",
   "author": "Nick Heyn <nick@heyn.io>",
   "main": "./lib/index.js",
+  "directories":{
+      "lib": "lib"
+  },
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/nheyn/react-async-dispatcher"
