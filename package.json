@@ -1,6 +1,6 @@
 {
   "name": "react-async-dispatcher",
-  "version": "0.1.0-rc5",
+  "version": "0.1.0-rc6",
   "description": "React bindings for async-dispatcher",
   "author": "Nick Heyn <nick@heyn.io>",
   "main": "./lib/index.js",
