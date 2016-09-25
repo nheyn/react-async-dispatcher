@@ -10,16 +10,19 @@ import type { HigherOrderComponent } from 'react-async-dispatcher';
  *
  */
 export default function dispatchWhenMounted(
-  action: Action | Array<Action>,
+  action: Action | Array<Action> | ((props: Object) => Action | Array<Action>),
   dispatcher?: Dispatcher
 ): HigherOrderComponent {
-  const actions = Array.isArray(action)? action: [action];
-
   return (Component) => {
     class DispatchWhenMounted extends React.Component<*, *, *> {
       componentDidMount() {
-        const currDispatcher = getDispatcher(this.props, this.context, dispatcher);
+        // Convert action to an array of actions
+        const actions = action;
+        if(typeof action === 'function')  actions = action(props);
+        if(!Array.isArray(action))        actions = [ action ];
 
+
+        const currDispatcher = getDispatcher(this.props, this.context, dispatcher);
         for(let i=0; actions.length>i; i++) {
           currDispatcher.dispatch(actions[i]);
         }

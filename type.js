@@ -7,7 +7,7 @@ declare module "react-async-dispatcher" {
   declare export function useStoreState(storeName: string, dispatcher?: Dispatcher): HigherOrderComponent;
   declare export function useDispatch(fnName?: string, dispatcher?: Dispatcher): HigherOrderComponent;
   declare export function dispatchWhenMounted(
-    action: Action | Array<Action>,
+    action: Action | Array<Action> | ((props: Object) => Action | Array<Action>),
     dispatcher?: Dispatcher
   ): HigherOrderComponent;
   declare export function useActionCreator(
