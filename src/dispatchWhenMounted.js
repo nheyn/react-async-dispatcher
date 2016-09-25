@@ -16,13 +16,10 @@ export default function dispatchWhenMounted(
   return (Component) => {
     class DispatchWhenMounted extends React.Component<*, *, *> {
       componentDidMount() {
-        // Convert action to an array of actions
-        const actions = action;
-        if(typeof action === 'function')  actions = action(props);
-        if(!Array.isArray(action))        actions = [ action ];
-
-
+        const actions = getActionArray(this.props, action);
         const currDispatcher = getDispatcher(this.props, this.context, dispatcher);
+
+        // Peform dispatch when component is first mounted
         for(let i=0; actions.length>i; i++) {
           currDispatcher.dispatch(actions[i]);
         }
@@ -38,4 +35,13 @@ export default function dispatchWhenMounted(
 
     return DispatchWhenMounted;
   };
+}
+
+function getActionArray(
+  props: Object,
+  inputAction: Action | Array<Action> | ((props: Object) => Action | Array<Action>)
+): Array<Action> {
+  if(typeof inputAction === 'function') return getActionArray(props, inputAction(props));
+  else if(Array.isArray(inputAction))   return inputAction;
+  else                                  return [ inputAction ];
 }
