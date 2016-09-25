@@ -12,18 +12,17 @@
     "url" : "https://github.com/nheyn/react-async-dispatcher"
   },
   "peerDependencies": {
-    "async-dispatcher": "*",
+    "async-dispatcher": "^0.1.0",
     "react": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "async-dispatcher": "0.1.0-rc3",
-    "babel-cli": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-es2015": "^6.9.0",
+    "async-dispatcher": "^0.1.0",
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "flow-bin": "^0.30.0",
-    "react": "^15.0.0",
-    "jest-cli": "^12.1.1"
+    "flow-bin": "^0.32.0",
+    "react": "^15.3.2"
   },
   "scripts": {
     "flow": "flow check",
